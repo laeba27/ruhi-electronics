@@ -20,8 +20,12 @@ const navItems = [
       { name: 'All Products', href: '/products' },
       { name: 'Immersion Water Heater', href: '/products/immersion-water-heater' },
       { name: 'Water Immersion Rod', href: '/products/water-immersion-rod' },
+      { name: 'Immersion Rod', href: '/products/immersion-rod' },
+      { name: 'Immersion Water Heater Rod', href: '/products/immersion-water-heater-rod' },
+      { name: 'Immersion Water Rod And Heater', href: '/products/immersion-water-rod-and-heater' },
       { name: 'Room Heater', href: '/products/room-heater' },
       { name: 'Ceiling Fan', href: '/products/ceiling-fan' },
+
     ]
   },
   {

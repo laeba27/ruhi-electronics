@@ -2,8 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { productCategories } from "@/data/products";
-import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/product-card";
+// import ProductFilter from "@/components/ProductFilter";
 
 // ✅ Required when using `output: 'export'` in next.config.js
 export async function generateStaticParams() {
@@ -19,9 +19,13 @@ export default function ProductsPage({ params }) {
     notFound();
   }
 
+  // Debug: Check if products exist
+  // console.log('Category:', category);
+  // console.log('Products:', category.products);
+
   return (
-    <div className="min-h-screen pt-20 pb-16">
-      <div className="bg-gray-50 dark:bg-gray-800 py-16">
+    <div className="min-h-screen p-3 ">
+      <div className="bg-gray-50 dark:bg-gray-800 pt-20 ">
         <div className="container mx-auto px-4">
           <Link
             href="/products"
@@ -38,6 +42,12 @@ export default function ProductsPage({ params }) {
         </div>
       </div>
 
+      {/* <div className="container mx-auto ">
+        <ProductFilter 
+          products={category.products || []} 
+          categoryName={category.name} 
+        />
+      </div> */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {category.products.map((product, index) => (

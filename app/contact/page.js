@@ -1,29 +1,54 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { companyInfo } from "@/data/company";
 
 export default function ContactPage() {
-  const handleSubmit = (e) => {
+  const [loading, setLoading] = useState(false);
+  const [successMsg, setSuccessMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Extract form data
+  
     const formData = new FormData(e.target);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const phone = formData.get("phone");
-    const subject = formData.get("subject");
-    const message = formData.get("message");
-    
-    // Compose email
-    const emailSubject = encodeURIComponent(subject || `Website Inquiry from ${name}`);
-    const emailBody = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`
-    );
-    
-    // Open email client
-    window.location.href = `mailto:${companyInfo.contactInfo.email}?subject=${emailSubject}&body=${emailBody}`;
+  
+    // Prepare data for Web3Forms API
+    const data = {
+      access_key: "173a6e9e-6404-4660-8381-88f16393fab5",
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      subject: formData.get("subject") || `Website Inquiry from ${formData.get("name")}`,
+      message: formData.get("message"),
+      // Optional: you can add "from_name", "from_email" etc. if Web3Forms supports it
+    };
+  
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+  
+      const result = await response.json();
+  
+      if (response.ok && result.success) {
+        alert("Message sent successfully!");
+        e.target.reset();
+      } else {
+        alert("Failed to send message. Please try again later.");
+        console.error("Web3Forms error:", result);
+      }
+    } catch (error) {
+      alert("An error occurred. Please try again.");
+      console.error("Fetch error:", error);
+    }
   };
 
   return (
@@ -120,7 +145,7 @@ export default function ContactPage() {
               </div>
             </div>
           </motion.div>
-          
+
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -130,8 +155,9 @@ export default function ContactPage() {
           >
             <div className="bg-white dark:bg-gray-900 shadow-sm rounded-lg p-6">
               <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
-              
+
               <form onSubmit={handleSubmit}>
+                {/* form fields as is */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-1">
@@ -145,7 +171,6 @@ export default function ContactPage() {
                       className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-800"
                     />
                   </div>
-                  
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-1">
                       Email Address *
@@ -159,7 +184,7 @@ export default function ContactPage() {
                     />
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium mb-1">
@@ -173,7 +198,6 @@ export default function ContactPage() {
                       className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-800"
                     />
                   </div>
-                  
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium mb-1">
                       Subject
@@ -186,7 +210,7 @@ export default function ContactPage() {
                     />
                   </div>
                 </div>
-                
+
                 <div className="mb-6">
                   <label htmlFor="message" className="block text-sm font-medium mb-1">
                     Your Message *
@@ -199,19 +223,29 @@ export default function ContactPage() {
                     className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-800"
                   />
                 </div>
-                
-                <button 
-                  type="submit" 
-                  className="bg-brand-red hover:bg-brand-darkRed text-white font-medium py-2 px-6 rounded-md transition-colors flex items-center"
+
+                {successMsg && (
+                  <p className="mb-4 text-green-600 dark:text-green-400">{successMsg}</p>
+                )}
+                {errorMsg && (
+                  <p className="mb-4 text-red-600 dark:text-red-400">{errorMsg}</p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className={`bg-brand-red hover:bg-brand-darkRed text-white font-medium py-2 px-6 rounded-md transition-colors flex items-center ${
+                    loading ? "opacity-60 cursor-not-allowed" : ""
+                  }`}
                 >
                   <Send className="mr-2 h-4 w-4" />
-                  Send Message
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
           </motion.div>
         </div>
-        
+
         {/* Google Map (Placeholder) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -220,13 +254,13 @@ export default function ContactPage() {
           viewport={{ once: true }}
           className="mt-12 rounded-lg overflow-hidden h-96 bg-gray-200 dark:bg-gray-800"
         >
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60277.379145260384!2d72.81562229959188!3d19.11919790058758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c839e1ca4b41%3A0x42e7fc91969e3d8c!2sAndheri%20East%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1686779037139!5m2!1sen!2sin" 
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen="" 
-            loading="lazy" 
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60277.379145260384!2d72.81562229959188!3d19.11919790058758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c839e1ca4b41%3A0x42e7fc91969e3d8c!2sAndheri%20East%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1686779037139!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Ruhi Electricals Location"
           />
