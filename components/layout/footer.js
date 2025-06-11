@@ -78,7 +78,7 @@ export default function Footer() {
             </div>
             
             {/* IndiaMART Trust Seal */}
-            <div className="mt-6">
+            {/* <div className="mt-6">
               <a 
                 href="https://www.indiamart.com/ruhielectricals/" 
                 target="_blank" 
@@ -93,7 +93,7 @@ export default function Footer() {
                   className="border border-gray-700 rounded"
                 />
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
         

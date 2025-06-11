@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Award, Users, TrendingUp, Shield } from "lucide-react";
 import { companyInfo } from "@/data/company";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -10,9 +11,11 @@ export default function AboutPage() {
       {/* Hero Section */}
       <div className="relative bg-gray-900 text-white py-24">
         <div className="absolute inset-0 overflow-hidden">
-          <img 
-            src="https://images.pexels.com/photos/3852577/pexels-photo-3852577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+          <Image
+            src="/immersionwaterheater/ugc1000/pic9.webp" 
             alt="Ruhi Electricals Factory" 
+            width={50}
+            height={50}
             className="w-full h-full object-cover opacity-20"
           />
         </div>
@@ -149,7 +152,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+      {/* <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -209,7 +212,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

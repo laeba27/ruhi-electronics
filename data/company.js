@@ -30,7 +30,7 @@ export const companyInfo = {
   contactInfo: {
     email: "info@ruhielectricals.com",
     phone: "+91 98765 43210",
-    address: "Plot No. 123, MIDC Industrial Area, Andheri East, Mumbai - 400093, Maharashtra, India"
+    address: "Ground Floor, H.No 123/B, Kh No. 168/228/173, Gali No 2, Village Wazirabad, New Delhi-110084, Delhi, India"
   },
   socialMedia: {
     facebook: "https://facebook.com/ruhielectricals",

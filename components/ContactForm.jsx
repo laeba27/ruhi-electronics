@@ -75,98 +75,11 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen pt-20 pb-16">
-      <div className="bg-gray-50 dark:bg-gray-800 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            We'd love to hear from you. Reach out to us for any queries or business inquiries.
-          </p>
-        </div>
-      </div>
 
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-1"
-          >
-            <div className="bg-white dark:bg-gray-900 shadow-sm rounded-lg overflow-hidden">
-              <div className="bg-brand-red p-6">
-                <h2 className="text-2xl font-bold text-white mb-2">Get In Touch</h2>
-                <p className="text-white/80">
-                  Our team is ready to assist you with any questions or inquiries.
-                </p>
-              </div>
-              
-              <div className="p-6">
-                <div className="space-y-6">
-                  <div className="flex">
-                    <div className="bg-brand-red/10 rounded-full p-3 mr-4">
-                      <MapPin className="h-6 w-6 text-brand-red" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1">Our Address</h4>
-                      <p className="text-gray-600 dark:text-gray-400">
-                      Ground Floor, H.No 123/B, Kh No. 168/228/173, Gali No 2, Village Wazirabad, New Delhi-110084, Delhi, India
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex">
-                    <div className="bg-brand-red/10 rounded-full p-3 mr-4">
-                      <Mail className="h-6 w-6 text-brand-red" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1">Email Us</h4>
-                      <a 
-                        href={`mailto:${companyInfo.contactInfo.email}`}
-                        className="text-brand-red hover:underline"
-                      >
-                        {companyInfo.contactInfo.email}
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex">
-                    <div className="bg-brand-red/10 rounded-full p-3 mr-4">
-                      <Phone className="h-6 w-6 text-brand-red" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1">Call Us</h4>
-                      <a 
-                        href={`tel:${companyInfo.contactInfo.phone}`}
-                        className="text-brand-red hover:underline"
-                      >
-                        {companyInfo.contactInfo.phone}
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Business Hours */}
-                <div className="mt-8 border-t pt-6 border-gray-200 dark:border-gray-700">
-                  <h4 className="font-semibold mb-3">Business Hours</h4>
-                  <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-                    <li className="flex justify-between">
-                      <span>Monday - Friday:</span>
-                      <span>9:00 AM - 6:00 PM</span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span>Saturday:</span>
-                      <span>10:00 AM - 4:00 PM</span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span>Sunday:</span>
-                      <span>Closed</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          Contact Information
+       
 
           {/* Contact Form */}
           <motion.div
@@ -325,26 +238,6 @@ export default function ContactPage() {
             </div>
           </motion.div>
         </div>
-
-        {/* Google Map */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mt-12"
-        >
-          <div className="bg-white dark:bg-gray-900 shadow-sm rounded-lg overflow-hidden">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.1234567890123!2d77.12345678901234!3d28.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d23456789abc:0x0!2sGround%20Floor%2C%20H.No%20123/B%2C%20Kh%20No.%20168/228/173%2C%20Gali%20No%202%2C%20Village%20Wazirabad%2C%20New%20Delhi-110084%2C%20Delhi%2C%20India!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
-  width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-        </motion.div>
       </div>
     </div>
   );

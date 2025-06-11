@@ -34,16 +34,14 @@ export default function ProductHighlights() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className=" mt-6 text-center">
           <Button
             asChild
             size="lg"
-            className="bg-brand-red hover:bg-brand-darkRed text-white"
+            className="bg-brand-red hover:bg-brand-darkRed  text-white"
           >
-            <Link href="/products">
-              View All Products
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            <Link href="/products" className="p-2">
+              View All Products</Link>
           </Button>
         </div>
       </div>

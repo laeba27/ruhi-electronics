@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { productCategories } from "@/data/products";
+import Image from "next/image";
 
 export default function FeaturedCategories() {
   return (
@@ -52,8 +53,10 @@ function CategoryCard({ category, index }) {
         >
           {/* Background Image */}
           <div className="absolute inset-0">
-            <img 
+            <Image
               src={category.image} 
+              width={30} 
+              height={40}
               alt={category.name} 
               className={`w-full h-full object-cover transition-transform duration-700 ${isHovered ? 'scale-110' : 'scale-100'}`}
             />
