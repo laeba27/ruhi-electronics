@@ -20,7 +20,7 @@ export default function ProductDetails({ product }) {
     phone: "",
     company: "",
     website: "",
-    message: ""
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -29,9 +29,9 @@ export default function ProductDetails({ product }) {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -72,7 +72,7 @@ export default function ProductDetails({ product }) {
           phone: "",
           company: "",
           website: "",
-          message: ""
+          message: "",
         });
       }
     } catch (error) {
@@ -89,17 +89,25 @@ export default function ProductDetails({ product }) {
 *Description:* ${product.description}
 
 *Specifications:*
-${product.specifications ? Object.entries(product.specifications).map(([key, value]) => `• *${key}:* ${value}`).join('\n') : 'Not available'}
+${
+  product.specifications
+    ? Object.entries(product.specifications)
+        .map(([key, value]) => `• *${key}:* ${value}`)
+        .join("\n")
+    : "Not available"
+}
 
 *Customer Details:*
-• *Name:* ${formData.name || 'Not provided'}
-• *Email:* ${formData.email || 'Not provided'}
-• *Phone:* ${formData.phone || 'Not provided'}
+• *Name:* ${formData.name || "Not provided"}
+• *Email:* ${formData.email || "Not provided"}
+• *Phone:* ${formData.phone || "Not provided"}
 
 I'm interested in this product. Please provide more details.`;
-    
+
     const phoneNumber = "+919876543210";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -128,7 +136,9 @@ I'm interested in this product. Please provide more details.`;
                     key={idx}
                     onClick={() => setCurrentImageIndex(idx)}
                     className={`relative w-16 h-16 rounded-md overflow-hidden cursor-pointer border-2 transition-all flex-shrink-0 ${
-                      idx === currentImageIndex ? "border-red-500" : "border-gray-300"
+                      idx === currentImageIndex
+                        ? "border-red-500"
+                        : "border-gray-300"
                     }`}
                   >
                     <Image
@@ -141,36 +151,119 @@ I'm interested in this product. Please provide more details.`;
                 ))}
               </div>
             )}
+            {/* Important Information Section */}
+            <div className=" h-64 overflow-y-scroll">
+              {product.important_information && (
+                <div className="mt-6 p-4">
+                  <h3 className="text-lg font-semibold mb-2">
+                    Important Information
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    {product.important_information}
+                  </p>
+                </div>
+              )}
+
+              {/* Additional Information Section */}
+              {product.Additional_Information && (
+                <div className="mt-6 p-4">
+                  <h3 className="text-lg font-semibold mb-2">
+                    Additional Information
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {product.Additional_Information.Item_Code && (
+                      <div>
+                        <span className="font-medium">Item Code:</span>
+                        <span className="ml-2 text-gray-600 dark:text-gray-400">
+                          {product.Additional_Information.Item_Code}
+                        </span>
+                      </div>
+                    )}
+                    {product.Additional_Information.Production_capacity && (
+                      <div>
+                        <span className="font-medium">
+                          Production Capacity:
+                        </span>
+                        <span className="ml-2 text-gray-600 dark:text-gray-400">
+                          {product.Additional_Information.Production_capacity}
+                        </span>
+                      </div>
+                    )}
+                    {product.Additional_Information.Delivery_Time && (
+                      <div>
+                        <span className="font-medium">Delivery Time:</span>
+                        <span className="ml-2 text-gray-600 dark:text-gray-400">
+                          {product.Additional_Information.Delivery_Time}
+                        </span>
+                      </div>
+                    )}
+                    {product.Additional_Information.Packaging_Details && (
+                      <div>
+                        <span className="font-medium">Packaging Details:</span>
+                        <span className="ml-2 text-gray-600 dark:text-gray-400">
+                          {product.Additional_Information.Packaging_Details}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* Features Section */}
+              {product.features && product.features.length > 0 && (
+                <div className="mt-6">
+                  <h3 className="text-lg font-semibold mb-2">Features</h3>
+                  <ul className="list-disc list-inside text-gray-600 dark:text-gray-400">
+                    {product.features.map((feature, index) => (
+                      <li key={index}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Right Side: Product Details */}
           <div className="flex-1 flex flex-col">
             {/* Header Section */}
             <div className="p-4 lg:p-6 border-b">
-              <h1 className="text-xl lg:text-2xl font-bold mb-2">{product.title}</h1>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">{product.description}</p>
-              
-              
+              <h1 className="text-xl lg:text-2xl font-bold mb-2">
+                {product.title}
+              </h1>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                {product.description}
+              </p>
+
               {/* Supplier Info & Price Row */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div className="flex flex-wrap items-center gap-3">
-                  <Badge variant="secondary" className="bg-green-100 p-2 text-green-800">
+                  <Badge
+                    variant="secondary"
+                    className="bg-green-100 p-2 text-green-800"
+                  >
                     <Shield className="h-3 w-3 mr-1" />
                     TrustSEAL Verified
                   </Badge>
-                  <Badge variant="outline" className="text-blue-600 p-2 border-blue-200">
+                  <Badge
+                    variant="outline"
+                    className="text-blue-600 p-2 border-blue-200"
+                  >
                     <Award className="h-3 w-3 mr-1" />
                     Leading Supplier
                   </Badge>
                 </div>
                 <div className="flex flex-col sm:items-end gap-1">
-                  <div className="text-xl lg:text-2xl font-bold text-red-600">₹{product.price}</div>
-                  <div className="text-sm text-gray-500">MOQ: {product.minOrderQuantity}</div>
+                  <div className="text-xl lg:text-2xl font-bold text-red-600">
+                    ₹{product.price}
+                  </div>
+                  <div className="text-sm text-gray-500">
+                    MOQ: {product.minOrderQuantity}
+                  </div>
                 </div>
               </div>
             </div>
-             {/* Action Buttons */}
-             <div className="p-4 lg:p-6 border-t bg-gray-50">
+            {/* Action Buttons */}
+            <div className="p-4 lg:p-6 border-t bg-gray-50">
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button
                   className="w-full bg-red-600 hover:bg-red-700 text-white"
@@ -195,33 +288,125 @@ I'm interested in this product. Please provide more details.`;
               {product.specifications ? (
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">Product Specifications</CardTitle>
+                    <CardTitle className="text-lg">
+                      Product Specifications
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="grid grid-cols-1 gap-1 max-h-[300px] lg:max-h-[400px] overflow-y-auto pr-4">
-                      {Object.entries(product.specifications).map(([key, value]) => (
-                        <div key={key} className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-2 border-b border-gray-100 last:border-b-0">
-                          <span className="font-medium text-gray-700 capitalize mb-1 sm:mb-0">
-                            {key.replace(/([A-Z])/g, " $1")}
-                          </span>
-                          <span className="text-gray-900 font-medium text-right">
-                            {typeof value === "boolean" ? (value ? "Yes" : "No") : value}
-                          </span>
-                        </div>
-                      ))}
+                      {Object.entries(product.specifications).map(
+                        ([key, value]) => (
+                          <div
+                            key={key}
+                            className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-2 border-b border-gray-100 last:border-b-0"
+                          >
+                            <span className="font-medium text-gray-700 capitalize mb-1 sm:mb-0">
+                              {key.replace(/([A-Z])/g, " $1")}
+                            </span>
+                            <span className="text-gray-900 font-medium text-right">
+                              {typeof value === "boolean"
+                                ? value
+                                  ? "Yes"
+                                  : "No"
+                                : value}
+                            </span>
+                          </div>
+                        )
+                      )}
                     </div>
                   </CardContent>
                 </Card>
               ) : (
                 <Card className="h-full flex items-center justify-center">
                   <CardContent>
-                    <p className="text-gray-500 text-center">No specifications available</p>
+                    <p className="text-gray-500 text-center">
+                      No specifications available
+                    </p>
                   </CardContent>
                 </Card>
               )}
             </div>
 
-           
+            {/* <div className="mt-6">
+              <h3 className="text-lg font-semibold mb-2">Description</h3>
+              <p className="text-gray-600 dark:text-gray-400">{product.description}</p>
+            </div> */}
+
+            {/* Important Information Section */}
+            {/* {product.important_information && (
+              <div className="mt-6 p-4">
+                <h3 className="text-lg font-semibold mb-2">Important Information</h3>
+                <p className="text-gray-600 dark:text-gray-400">{product.important_information}</p>
+              </div>
+            )} */}
+
+            {/* Additional Information Section */}
+            {/* {product.Additional_Information && (
+              <div className="mt-6 p-4">
+                <h3 className="text-lg font-semibold mb-2">Additional Information</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {product.Additional_Information.Item_Code && (
+                    <div>
+                      <span className="font-medium">Item Code:</span>
+                      <span className="ml-2 text-gray-600 dark:text-gray-400">
+                        {product.Additional_Information.Item_Code}
+                      </span>
+                    </div>
+                  )}
+                  {product.Additional_Information.Production_capacity && (
+                    <div>
+                      <span className="font-medium">Production Capacity:</span>
+                      <span className="ml-2 text-gray-600 dark:text-gray-400">
+                        {product.Additional_Information.Production_capacity}
+                      </span>
+                    </div>
+                  )}
+                  {product.Additional_Information.Delivery_Time && (
+                    <div>
+                      <span className="font-medium">Delivery Time:</span>
+                      <span className="ml-2 text-gray-600 dark:text-gray-400">
+                        {product.Additional_Information.Delivery_Time}
+                      </span>
+                    </div>
+                  )}
+                  {product.Additional_Information.Packaging_Details && (
+                    <div>
+                      <span className="font-medium">Packaging Details:</span>
+                      <span className="ml-2 text-gray-600 dark:text-gray-400">
+                        {product.Additional_Information.Packaging_Details}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )} */}
+
+            {/* Features Section */}
+            {/* {product.features && product.features.length > 0 && (
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold mb-2">Features</h3>
+                <ul className="list-disc list-inside text-gray-600 dark:text-gray-400">
+                  {product.features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+            )} */}
+
+            {/* Specifications Section */}
+            {/* {product.specifications && Object.keys(product.specifications).length > 0 && (
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold mb-2">Specifications</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {Object.entries(product.specifications).map(([key, value]) => (
+                    <div key={key}>
+                      <span className="font-medium">{key}:</span>
+                      <span className="ml-2 text-gray-600 dark:text-gray-400">{value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )} */}
           </div>
         </div>
       ) : (
@@ -260,7 +445,9 @@ I'm interested in this product. Please provide more details.`;
                     </div>
                     <div className="flex justify-between">
                       <span>Minimum Order:</span>
-                      <span className="font-medium">{product.minOrderQuantity} units</span>
+                      <span className="font-medium">
+                        {product.minOrderQuantity} units
+                      </span>
                     </div>
                   </div>
                 </CardContent>
@@ -279,7 +466,10 @@ I'm interested in this product. Please provide more details.`;
                   <p className="text-gray-600">
                     We have received your message and will contact you shortly.
                   </p>
-                  <Button onClick={() => setShowContactForm(false)} className="bg-red-600 hover:bg-red-700 text-white">
+                  <Button
+                    onClick={() => setShowContactForm(false)}
+                    className="bg-red-600 hover:bg-red-700 text-white"
+                  >
                     Back to Product
                   </Button>
                 </CardContent>
@@ -288,7 +478,9 @@ I'm interested in this product. Please provide more details.`;
               <Card className="h-full flex flex-col justify-evenly">
                 <CardHeader>
                   <CardTitle className="text-xl">Contact Information</CardTitle>
-                  <p className="text-sm text-gray-600">Supplier wants to know more about you</p>
+                  <p className="text-sm text-gray-600">
+                    Supplier wants to know more about you
+                  </p>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-5">
