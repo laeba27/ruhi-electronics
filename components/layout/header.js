@@ -8,6 +8,7 @@ import { Menu, X, ChevronDown, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ThemeToggle from '@/components/theme-toggle';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 const navItems = [
   { name: 'Home', href: '/' },
@@ -124,10 +125,19 @@ export default function Header() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-2xl font-bold text-brand-red dark:text-white"
+              className="text-2xl font-bold flex items-center text-brand-red dark:text-white"
             >
-              <span className="text-brand-red">Ruhi</span>
-              <span className="text-gray-800 dark:text-white">Electricals</span>
+              
+              <Image
+  src="/logo.png"
+  alt="Electrical Products"
+  width={50}
+  height={50}
+  className="h-auto object-contain"
+  priority
+/>
+<span className="text-brand-red text-sm">Ruhi</span>
+              <span className="text-gray-800 dark:text-white text-sm">Electricals</span>
             </motion.div>
           </Link>
 
