@@ -46,6 +46,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const headerRef = useRef(null);
+  const [showCallModal, setShowCallModal] = useState(false);
 
   // Handle scroll event for header class changes
   useEffect(() => {
@@ -93,11 +94,9 @@ export default function Header() {
 
   // Handle phone call
   const handlePhoneCall = () => {
-    const phoneNumber = "9717809918";
-    const message = "Hi, I want to contact you for more information about your products.";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
+    window.location.href = "tel:9717809918";
   };
+  
 
   // Handle email
   const handleEmail = () => {
@@ -320,13 +319,14 @@ export default function Header() {
 
                 {/* Mobile Contact Buttons */}
                 <div className="flex flex-col space-y-2 px-3 pt-2">
-                  <Button 
-                    className="w-full bg-brand-red text-white hover:bg-brand-red/10 border border-brand-red hover:border-brand-red/10 hover:text-brand-red"
-                    onClick={handlePhoneCall}
-                  >
-                    <Phone className="h-4 w-4 mr-2" />
-                    Call Us
-                  </Button>
+                <Button 
+  size="sm" 
+  className="bg-brand-red px-3 xl:px-4 py-2 text-white hover:bg-brand-red/10 border border-brand-red hover:border-brand-red/10 hover:text-brand-red"
+  onClick={() => setShowCallModal(true)}
+>
+  <Phone className="h-4 w-4 mr-2" />
+  Call Us
+</Button>
                   <Button 
                     variant="outline"
                     className="w-full border border-brand-red text-brand-red hover:bg-brand-red/10"
@@ -341,6 +341,32 @@ export default function Header() {
           )}
         </AnimatePresence>
       </div>
+      {showCallModal && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="bg-white dark:bg-gray-900 rounded-lg p-6 max-w-sm w-full shadow-lg">
+      <h2 className="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Confirm Call</h2>
+      <p className="text-gray-600 dark:text-gray-300 mb-4">
+        Do you want to call <strong className="text-brand-red">+91 9717809918</strong>?
+      </p>
+      <div className="flex justify-end space-x-3">
+        <Button variant="outline" onClick={() => setShowCallModal(false)}>
+          Cancel
+        </Button>
+        <Button
+          className="bg-brand-red text-white hover:bg-brand-darkRed"
+          onClick={() => {
+            setShowCallModal(false);
+            window.location.href = "tel:9717809918";
+          }}
+        >
+          Call Now
+        </Button>
+      </div>
+    </div>
+  </div>
+)}
+
     </header>
+    
   );
 }
