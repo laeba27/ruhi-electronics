@@ -5143,7 +5143,12 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "electric-immersion-rod",
         "description": "Robust 1500W immersion rod with waterproof and shockproof features by UGC, suitable for daily water heating.",
         "price": 150,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/immerrod2000/pic4.webp",
+          "/immersionwaterheater/immerrod2000/pic3.webp",
+          "/immersionwaterheater/immerrod2000/pic2.webp",
+          "/immersionwaterheater/immerrod2000/pic1.webp",
+        ],
         "specifications": {
           "wattage": "1500 W",
           "heatingElement": null,
@@ -5174,7 +5179,11 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "1000w-immersion-water-heater-rod",
         "description": "Compact 1000W rod with copper element, shockproof body, and modern design from UGC.",
         "price": 130,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/3000w/pic4.webp", 
+          "/immersionwaterheater/3000w/pic6.webp", 
+          "/immersionwaterheater/3000w/pic8.webp", 
+        ],
         "specifications": {
           "wattage": "1000 W",
           "heatingElement": "Copper",
@@ -5205,7 +5214,11 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "immersion-rod-2000w",
         "description": "Heavy-duty 2000W immersion rod for 20L tank capacity, shockproof and energy-saving.",
         "price": 155,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/immerrod2000/pic1.webp",
+          "/immersionwaterheater/immerrod2000/pic2.webp",
+          "/immersionwaterheater/immerrod2000/pic3.webp",
+        ],
         "specifications": {
           "wattage": "2000 W",
           "heatingElement": "Copper",
@@ -5236,7 +5249,12 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "1500w-waterproof-immersion-rod",
         "description": "1500W waterproof and shockproof immersion rod with copper element and safe compact body.",
         "price": 150,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/rod304/pic4.webp",
+          "/immersionwaterheater/rod304/pic3.webp",
+          "/immersionwaterheater/rod304/pic2.webp",
+          "/immersionwaterheater/rod304/pic1.webp",
+        ],
         "specifications": {
           "wattage": "1500 W",
           "heatingElement": "Copper",
@@ -5267,7 +5285,12 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "immersion-rod-1500w",
         "description": "Standard 1500W copper rod by UGC for efficient water heating, ISI certified.",
         "price": 155,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/rod304/pic5.webp",
+          "/immersionwaterheater/rod304/pic6.webp",
+          "/immersionwaterheater/rod304/pic2.webp",
+          "/immersionwaterheater/rod304/pic1.webp",
+        ],
         "specifications": {
           "wattage": "1500W",
           "heatingElement": "Copper",
@@ -5298,7 +5321,12 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "abc-1500w-immersion-water-heater",
         "description": "1500W copper immersion rod by UGC with waterproof and shockproof safety, compact and effective.",
         "price": 150,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/rod1000w/pic5.webp",
+          "/immersionwaterheater/rod1000w/pic6.webp",
+          "/immersionwaterheater/rod1000w/pic2.webp",
+          "/immersionwaterheater/rod1000w/pic3.webp",
+        ],
         "specifications": {
           "wattage": "1500 W",
           "heatingElement": "Copper",
@@ -5329,7 +5357,12 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "electric-water-heater-rod-1500w",
         "description": "Reliable 1500W UGC immersion rod with copper coil and water-resistant structure.",
         "price": 150,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/rod1000w/pic3.webp",
+          "/immersionwaterheater/rod1000w/pic2.webp",
+          "/immersionwaterheater/rod1000w/pic1.webp",
+
+        ],
         "specifications": {
           "wattage": "1500 W",
           "heatingElement": "Copper",
@@ -5360,7 +5393,12 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "water-immersion-rod-1000w",
         "description": "1000W copper immersion rod by UGC with basic safety, ideal for bucket heating.",
         "price": 125,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/shock-proof/pic1.webp",
+          "/immersionwaterheater/shock-proof/pic2.webp",
+          "/immersionwaterheater/shock-proof/pic3.webp",
+
+        ],
         "specifications": {
           "wattage": "1000 W",
           "heatingElement": "Copper",
@@ -5391,7 +5429,13 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "ugc-water-immersion-rod-1500w",
         "description": "1500W waterproof and shockproof immersion rod with advanced features by UGC.",
         "price": 145,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/ssimmersionwaterheaterrod/pic6.webp",
+          "/immersionwaterheater/ssimmersionwaterheaterrod/pic3.webp",
+          "/immersionwaterheater/ssimmersionwaterheaterrod/pic2.webp",
+          "/immersionwaterheater/ssimmersionwaterheaterrod/pic1.webp",
+
+        ],
         "specifications": {
           "wattage": "1500 W",
           "heatingElement": "Copper",
@@ -5422,7 +5466,11 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "ugc-1500w-water-immersion-rod",
         "description": "1500W robust water immersion rod with 8mm rod diameter and advanced safety from UGC.",
         "price": 145,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/ssimmersionwaterheaterrod/pic5.webp",
+          "/immersionwaterheater/ssimmersionwaterheaterrod/pic7.webp",
+          "/immersionwaterheater/ssimmersionwaterheaterrod/pic1.webp",
+        ],
         "specifications": {
           "wattage": "1500 W",
           "heatingElement": "Copper",
@@ -5453,7 +5501,9 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "electric-immersion-rod",
         "description": "Stylish 1500W immersion rod by UGC, waterproof and shockproof, compact for household use.",
         "price": 150,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/ssimmersionwaterheaterrod/pic4.webp", "/immersionwaterheater/ssimmersionwaterheaterrod/pic5.webp", "/immersionwaterheater/ssimmersionwaterheaterrod/pic7.webp",
+        ],
         "specifications": {
           "wattage": "1500 W",
           "heatingElement": "Copper",
@@ -5486,7 +5536,11 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "1000w-immersion-water-heater-rod",
         "description": "Copper immersion rod by UGC with black color finish, non-waterproof but shockproof.",
         "price": 130,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/ugc1000/pic5.webp", 
+          "/immersionwaterheater/ugc1000/pic3.webp", 
+          "/immersionwaterheater/ugc1000/pic2.webp",
+        ],
         "specifications": {
           "wattage": "1000 W",
           "heatingElement": "Copper",
@@ -5517,7 +5571,11 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "immersion-rod-2000w",
         "description": "2000W high-performance copper immersion rod by UGC, ideal for large tanks.",
         "price": 155,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/ugc1000/pic9.webp", 
+          "/immersionwaterheater/ugc1000/pic8.webp", 
+          "/immersionwaterheater/ugc1000/pic3.webp", 
+        ],
         "specifications": {
           "wattage": "2000 W",
           "heatingElement": "Copper",
@@ -5550,7 +5608,12 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "1500w-waterproof-immersion-rod",
         "description": "1500W waterproof copper immersion rod by UGC, shockproof with reliable performance.",
         "price": 150,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/ugc1000/pic2.webp", 
+          "/immersionwaterheater/ugc1000/pic3.webp", 
+          "/immersionwaterheater/ugc1000/pic4.webp", 
+
+        ],
         "specifications": {
           "wattage": "1500 W",
           "heatingElement": "Copper",
@@ -5583,7 +5646,12 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "immersion-rod-1500w",
         "description": "Efficient 1500W copper immersion rod for daily water heating needs, ISI certified.",
         "price": 155,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/ugc1000/pic21.webp", 
+          "/immersionwaterheater/ugc1000/pic15.webp", 
+          "/immersionwaterheater/ugc1000/pic16.webp", 
+
+        ],
         "specifications": {
           "wattage": "1500W",
           "heatingElement": "Copper",
@@ -5616,7 +5684,11 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "abc-1500w-immersion-water-heater",
         "description": "Stylish and shockproof ABC 1500W immersion water heater with advanced copper heating.",
         "price": 150,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/ugc1000/pic20.webp", 
+          "/immersionwaterheater/ugc1000/pic10.webp", 
+          "/immersionwaterheater/ugc1000/pic11.webp", 
+        ],
         "specifications": {
           "wattage": "1500 W",
           "heatingElement": "Copper",
@@ -5649,7 +5721,11 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "electric-water-heater-rod-1500w",
         "description": "Robust 1500W electric water heater rod with waterproof, shockproof copper design.",
         "price": 150,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/ugc1000/pic12.webp", 
+          "/immersionwaterheater/ugc1000/pic13.webp", 
+          "/immersionwaterheater/ugc1000/pic14.webp", 
+        ],
         "specifications": {
           "wattage": "1500 W",
           "heatingElement": "Copper",
@@ -5682,7 +5758,11 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "water-immersion-rod-1000w",
         "description": "Cost-effective 1000W immersion rod with copper element and practical design.",
         "price": 125,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/ugc1000/pic18.webp", 
+          "/immersionwaterheater/ugc1000/pic19.webp", 
+          "/immersionwaterheater/ugc1000/pic9.webp", 
+        ],
         "specifications": {
           "wattage": "1000 W",
           "heatingElement": "Copper",
@@ -5711,7 +5791,11 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "ugc-water-immersion-rod-1500w",
         "description": "Durable 1500W immersion rod by UGC with energy-saving hanger loop design.",
         "price": 145,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/3000w/pic1.webp", 
+          "/immersionwaterheater/3000w/pic2.webp", 
+          "/immersionwaterheater/3000w/pic3.webp", 
+        ],
         "specifications": {
           "wattage": "1500 W",
           "heatingElement": "Copper",
@@ -5745,7 +5829,13 @@ The UGC ISI-certified 1500 W shockproof immersion heater rod features premium st
         "slug": "ugc-1500w-water-immersion-rod",
         "description": "Reliable 1500W immersion rod with ISI certification and 8mm rod diameter.",
         "price": 145,
-        "images": [],
+        "images": [
+          "/immersionwaterheater/3000w/pic4.webp", 
+          "/immersionwaterheater/3000w/pic5.webp", 
+          "/immersionwaterheater/3000w/pic6.webp", 
+          "/immersionwaterheater/3000w/pic7.webp", 
+          "/immersionwaterheater/3000w/pic8.webp", 
+        ],
         "specifications": {
           "wattage": "1500 W",
           "heatingElement": "Copper",
@@ -5782,12 +5872,12 @@ export const featuredProducts = [
   {
     id: 101,
     title: "Immersion Water Heater Rod 1000W",
-    slug: "immersion-water-heater-rod-1000w",
+    slug: "immersion-water-heater-rod/water-immersion-rod-1000w-2",
     description:
       "High-quality immersion water heater rod with 1000W power for efficient water heating.",
-    price: 450,
+    price: 125,
     image:
-      "https://images.pexels.com/photos/3852577/pexels-photo-3852577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "/immersionwaterheater/rod1000w/pic1.webp",
     category: "Immersion Water Heater",
   },
   {
@@ -5803,12 +5893,12 @@ export const featuredProducts = [
   {
     id: 402,
     title: "60W Electrical Ceiling Fan",
-    slug: "60w-electrical-ceiling-fan",
+    slug: "ceiling-fan/60w-electrical-ceiling-fan",
     description:
       "Energy-efficient ceiling fan with smooth operation and modern design.",
     price: 1500,
     image:
-      "https://images.pexels.com/photos/1797824/pexels-photo-1797824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "/immersionwaterheater/fan/pic11.webp",
     category: "Ceiling Fan",
   },
   {

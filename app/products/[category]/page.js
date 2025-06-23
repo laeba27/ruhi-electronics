@@ -48,7 +48,7 @@ export default function CategoryPage({ params }) {
       <div className="container mx-auto px-4 py-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
           {category.products.map((product, index) => (
-            <div key={product.id} className="group bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div key={product.id} className="group bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
               {/* Product Image */}
               <div className="relative aspect-w-16 aspect-h-12 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800">
                 {product.images && product.images.length > 0 ? (
@@ -88,7 +88,7 @@ export default function CategoryPage({ params }) {
               </div>
               
               {/* Product Info */}
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white line-clamp-2 group-hover:text-brand-red transition-colors duration-200">
                   {product.title}
                 </h3>
@@ -130,7 +130,7 @@ export default function CategoryPage({ params }) {
                 
                 <Link
                   href={`/products/${category.slug}/${product.slug}`}
-                  className="block w-full bg-gradient-to-r from-brand-red to-red-600 text-white py-3 px-6 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-200 text-center font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="block w-full bg-gradient-to-r from-brand-red to-red-600 text-white py-3 px-6 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-200 text-center font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 mt-auto"
                 >
                   View Details
                 </Link>
